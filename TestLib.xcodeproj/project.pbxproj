@@ -17,6 +17,8 @@
 		AF60926328051C9B00B02E45 /* TestLibTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AF60926228051C9B00B02E45 /* TestLibTests.m */; };
 		AF60926D28051C9B00B02E45 /* TestLibUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = AF60926C28051C9B00B02E45 /* TestLibUITests.m */; };
 		AF60926F28051C9B00B02E45 /* TestLibUITestsLaunchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AF60926E28051C9B00B02E45 /* TestLibUITestsLaunchTests.m */; };
+		AF6092BF2805207A00B02E45 /* TestPublicLib.m in Sources */ = {isa = PBXBuildFile; fileRef = AF6092BE2805207A00B02E45 /* TestPublicLib.m */; };
+		AF6092C32805258200B02E45 /* TestSubLib.m in Sources */ = {isa = PBXBuildFile; fileRef = AF6092C22805258200B02E45 /* TestSubLib.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +56,10 @@
 		AF60926828051C9B00B02E45 /* TestLibUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestLibUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF60926C28051C9B00B02E45 /* TestLibUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestLibUITests.m; sourceTree = "<group>"; };
 		AF60926E28051C9B00B02E45 /* TestLibUITestsLaunchTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestLibUITestsLaunchTests.m; sourceTree = "<group>"; };
+		AF6092BD2805207A00B02E45 /* TestPublicLib.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestPublicLib.h; sourceTree = "<group>"; };
+		AF6092BE2805207A00B02E45 /* TestPublicLib.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestPublicLib.m; sourceTree = "<group>"; };
+		AF6092C12805258200B02E45 /* TestSubLib.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestSubLib.h; sourceTree = "<group>"; };
+		AF6092C22805258200B02E45 /* TestSubLib.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestSubLib.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +110,7 @@
 		AF60924528051C9800B02E45 /* TestLib */ = {
 			isa = PBXGroup;
 			children = (
+				AF6092BC2805205A00B02E45 /* TestLib */,
 				AF60924628051C9800B02E45 /* AppDelegate.h */,
 				AF60924728051C9800B02E45 /* AppDelegate.m */,
 				AF60924928051C9800B02E45 /* SceneDelegate.h */,
@@ -134,6 +141,25 @@
 				AF60926E28051C9B00B02E45 /* TestLibUITestsLaunchTests.m */,
 			);
 			path = TestLibUITests;
+			sourceTree = "<group>";
+		};
+		AF6092BC2805205A00B02E45 /* TestLib */ = {
+			isa = PBXGroup;
+			children = (
+				AF6092C0280521D100B02E45 /* Sub */,
+				AF6092BD2805207A00B02E45 /* TestPublicLib.h */,
+				AF6092BE2805207A00B02E45 /* TestPublicLib.m */,
+			);
+			path = TestLib;
+			sourceTree = "<group>";
+		};
+		AF6092C0280521D100B02E45 /* Sub */ = {
+			isa = PBXGroup;
+			children = (
+				AF6092C12805258200B02E45 /* TestSubLib.h */,
+				AF6092C22805258200B02E45 /* TestSubLib.m */,
+			);
+			path = Sub;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -266,9 +292,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF6092C32805258200B02E45 /* TestSubLib.m in Sources */,
 				AF60924E28051C9800B02E45 /* ViewController.m in Sources */,
 				AF60924828051C9800B02E45 /* AppDelegate.m in Sources */,
 				AF60925928051C9A00B02E45 /* main.m in Sources */,
+				AF6092BF2805207A00B02E45 /* TestPublicLib.m in Sources */,
 				AF60924B28051C9800B02E45 /* SceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -451,6 +479,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -459,7 +488,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.TestLib;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -477,6 +506,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -485,7 +515,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.TestLib;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
