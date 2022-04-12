@@ -80,8 +80,8 @@ Pod::Spec.new do |spec|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  spec.source       = { :git => "https://github.com/xiaozo/TestLib.git", :tag => "#{spec.version}" }
-
+#  spec.source       = { :git => "https://github.com/xiaozo/TestLib.git", :tag => "#{spec.version}" }
+   spec.source       = { :git => "https://github.com/xiaozo/TestLib.git" }
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
@@ -96,10 +96,10 @@ Pod::Spec.new do |spec|
   
   spec.exclude_files = Sub_files
     
-          #二级目录
-    spec.subspec 'Sub' do |ss|
-    ss.source_files = Sub_files
-    end
+  #二级目录
+  spec.subspec 'Sub' do |ss|
+      ss.source_files = Sub_files
+  end
     
   # spec.public_header_files = "Classes/**/*.h"
 
@@ -129,6 +129,12 @@ Pod::Spec.new do |spec|
 
   # spec.library   = "iconv"
   # spec.libraries = "iconv", "xml2"
+  
+  # 本库提供的 .a 静态库
+  #s.vendored_libraries  = 'ZykjFoundation/ZykjFoundation/**/*.a'
+    
+  # 本库提供的 .framework 静态库
+  #s.vendored_frameworks ='ZykjFoundation/ZykjFoundation/**/*.framework'
 
 
   # ――― Project Settings ――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
